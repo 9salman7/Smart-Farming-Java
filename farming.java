@@ -23,6 +23,7 @@ public class farming extends Application {
         primaryStage.setTitle("Smart Farming");
         GridPane gridPane2 = createRegistrationFormPane();
         GridPane gridPane3 = createRegistrationFormPane();
+        GridPane gridpane4=createRegistrationFormPane();
 
         Scene scene2= new Scene(gridPane2,800,500);
         // Create the registration form grid pane
@@ -124,6 +125,36 @@ public class farming extends Application {
                 });
                 Scene scene3=new Scene(gridPane3,800,500);
                 primaryStage.setScene(scene3);      
+            }
+        });
+        Button button4= new Button("view soil details");
+        //button2.setPrefSize(10,300);
+        gridPane2.add(button4, 2, 3);
+        button4.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent event) {
+                /*Text TextResponse=new Text();
+                gridPane2.add(TextResponse, 3, 3);
+                TextResponse.setText("Something");*/
+                Text ph=new Text("ph:");
+                Text phvalue=new Text("8 ");
+                Text pest=new Text("pesticides present:");
+                Text pestvalue=new Text("alchnol,alkaline,etc");
+                Text warning=new Text("Use of reduced usage pesticide detected reduce usage!!!");
+                gridpane4.add(ph,0, 0);
+                gridpane4.add(phvalue, 1,0 );
+                gridpane4.add(pest, 0, 1);
+                gridpane4.add(pestvalue, 1, 1);
+                gridpane4.add(warning, 5, 3);
+                Button button5= new Button("Go back");
+                gridpane4.add(button5, 1, 3);
+                button5.setOnAction(new EventHandler<ActionEvent>(){
+                    public void handle(ActionEvent event2) {
+                       
+                        primaryStage.setScene(scene2);
+                    }
+                });
+                Scene scene4=new Scene(gridpane4,800,500);
+                primaryStage.setScene(scene4);      
             }
         });
 
